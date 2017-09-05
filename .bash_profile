@@ -42,7 +42,7 @@ venv() {
     if [[ $VIRTUAL_ENV == "" ]]; then
         printf ""
     else
-        printf "\033[${bven};97m ($(basename $VIRTUAL_ENV)) $(rarr $bpath $fven)"
+        printf "\033[${bven};97m  $(basename $VIRTUAL_ENV) $(rarr $bpath $fven)"
     fi
 }
 
