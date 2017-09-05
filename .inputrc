@@ -1,0 +1,9 @@
+set completion-ignore-case on
+set show-all-if-ambiguous on
+TAB: menu-complete
+
+# Make åäö not be ugly
+set meta-flag on
+set convert-meta off
+set input-meta off
+set output-meta on
