@@ -68,8 +68,8 @@ export PS1="\$(venv)${path}\$(gitbr)\033[m \n$ "
 
 # remove duplicates from PROMPT_COMMAND, since sourcing bash_profile adds some stuff again
 # without checking if it's already there, causing lag
-export PROMPT_COMMAND
-export PROMPT_COMMAND=$(python3 -c 'import os; l = os.environ["PROMPT_COMMAND"].split("; "); print("; ".join(set(l)))')
+# export PROMPT_COMMAND
+# export PROMPT_COMMAND=$(python3 -c 'import os; l = os.environ["PROMPT_COMMAND"].split("; "); print("; ".join(set(l)))')
 
 
 ### END OF PROMPT CONFIG
