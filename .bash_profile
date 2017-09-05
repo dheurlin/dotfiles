@@ -39,7 +39,12 @@ gitbr() {
         printf "\033[m$(rarr '' $fpath)"
     else
         printf "$(rarr $bgit $fpath)"
-        printf "\033[${bgit};97m $git_branch \033[91m$git_dirty \033[m$(rarr $fgit '0')\033[m"
+        printf "\033[${bgit};97m $git_branch "
+        # print dirty if exists
+        if [[ $git_dirty != "" ]]; then
+            printf "\033[91m$git_dirty " 
+        fi
+        printf "\033[m$(rarr $fgit '0')\033[m"
     fi
 }
 # usr="\033[97m\033[${busr}m \u \033[${fusr};${bpath}m\033[m"
