@@ -38,8 +38,11 @@ gitbr() {
     if [[ $git_branch == "" ]]; then
         printf "\033[m$(rarr '' $fpath)"
     else
+        # remove brackets from branch name
+        gb=${git_branch#"("}
+        gb=${gb%")"}
         printf "$(rarr $bgit $fpath)"
-        printf "\033[${bgit};97m $git_branch "
+        printf "\033[${bgit};97m  $gb "
         # print dirty if exists
         if [[ $git_dirty != "" ]]; then
             printf "\033[91m$git_dirty " 
