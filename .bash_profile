@@ -54,18 +54,22 @@ gitbr() {
         # remove brackets from branch name
         gb=${git_branch#"("}
         gb=${gb%")"}
-        printf "$(rarr $bgit $fpath)"
-        printf "\033[${bgit};97m  $gb "
+        gd=""
         # print dirty if exists
         if [[ $git_dirty != "" ]]; then
-            printf "\033[91m$git_dirty " 
+            gd="\033[91m${git_dirty} " 
         fi
-        printf "\033[m$(rarr $fgit '0')\033[m"
+        printf "$(rarr $bgit $fpath)\033[${bgit};97m  $gb $gd\033[m$(rarr $fgit '0')\033[m"
     fi
 }
 # usr="\033[97m\033[${busr}m \u \033[${fusr};${bpath}m\033[m"
 path="\033[${bpath};30m \w "
 export PS1="\$(venv)${path}\$(gitbr)\033[m \n$ " 
+
+# remove duplicates from PROMPT_COMMAND, since sourcing bash_profile adds some stuff again
+# without checking if it's already there, causing lag
+export PROMPT_COMMAND
+export PROMPT_COMMAND=$(python3 -c 'import os; l = os.environ["PROMPT_COMMAND"].split("; "); print("; ".join(set(l)))')
 
 
 ### END OF PROMPT CONFIG
