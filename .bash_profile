@@ -11,7 +11,7 @@ export PATH="/Users/danielheurlin/.erlangInstaller/20.0/bin:$PATH" # Add erlang
 # Make bash use vim bindings
 set -o vi
 
-# change command line prompt
+### PROMPT CONFIG
 # old: PS1=\h:\W \u\$
 # newer:
 # export PS1='\033[32m\u\033[m @ \033[31m\h : \033[m\033[105;30m\w\033[m \n$ '
@@ -26,12 +26,25 @@ rarr() {
 }
 
 # the colors used, both bg and fg values
+fven="31"
+bven="41"
 fusr="90"
 busr="100"
 fgit="90"
 bgit="100"
 fpath="32"
 bpath="42"
+
+# dont use default vitrtualenv prompt, use custom instead
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+# print current virtualenv, if it exists
+venv() {
+    if [[ $VIRTUAL_ENV == "" ]]; then
+        printf ""
+    else
+        printf "\033[${bven};97m ($(basename $VIRTUAL_ENV)) $(rarr $bpath $fven)"
+    fi
+}
 
 # Prints the current git branch if it exists, otherwise print noting
 gitbr() {
@@ -52,7 +65,11 @@ gitbr() {
 }
 # usr="\033[97m\033[${busr}m \u \033[${fusr};${bpath}m\033[m"
 path="\033[${bpath};30m \w "
-export PS1="${path}\$(gitbr)\033[m \n$ " 
+export PS1="\$(venv)${path}\$(gitbr)\033[m \n$ " 
+
+
+### END OF PROMPT CONFIG
+
 
 export LC_ALL='sv_SE.UTF-8'
 # add colors to command line
