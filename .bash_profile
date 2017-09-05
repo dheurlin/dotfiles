@@ -15,19 +15,36 @@ set -o vi
 # old: PS1=\h:\W \u\$
 # newer:
 # export PS1='\033[32m\u\033[m @ \033[31m\h : \033[m\033[105;30m\w\033[m \n$ '
+# Add git plugin
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
+#helper function to make the arrow
+rarr() {
+    bg=$1
+    fg=$2
+    printf "\033[${fg};${bg}m"
+}
+
 # the colors used, both bg and fg values
 fusr="90"
 busr="100"
+fgit="90"
+bgit="100"
 fpath="32"
 bpath="42"
 
-# function mkprompt () {
-    usr="\033[97m\033[${busr}m \u \033[${fusr};${bpath}m\033[m"
-    path="\033[${bpath};30m \w \033[m\033[${fpath}m"
-    export PS1="$path\033[m \n$ " 
-# }
-
-# export PROMPT_COMMAND="mkprompt"
+# Prints the current git branch if it exists, otherwise print noting
+gitbr() {
+    if [[ $git_branch == "" ]]; then
+        printf "\033[m$(rarr '' $fpath)"
+    else
+        printf "$(rarr $bgit $fpath)"
+        printf "\033[${bgit};97m $git_branch \033[91m$git_dirty \033[m$(rarr $fgit '0')\033[m"
+    fi
+}
+# usr="\033[97m\033[${busr}m \u \033[${fusr};${bpath}m\033[m"
+path="\033[${bpath};30m \w "
+export PS1="${path}\$(gitbr)\033[m \n$ " 
 
 export LC_ALL='sv_SE.UTF-8'
 # add colors to command line
