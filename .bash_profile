@@ -59,7 +59,7 @@ gitbr() {
         if [[ $git_dirty != "" ]]; then
             gd="\033[91m${git_dirty} " 
         fi
-        printf "\033[97m $gb $gd "
+        printf " $gb $gd "
     fi
 }
 usr="\033[${fusr}m\u\033[m : "
