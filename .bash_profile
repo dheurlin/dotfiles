@@ -26,9 +26,9 @@ rarr() {
 }
 
 # the colors used, both bg and fg values
-fven="31"
+fven="33"
 bven="41"
-fusr="90"
+fusr="32"
 busr="100"
 fgit="90"
 bgit="100"
@@ -42,14 +42,14 @@ venv() {
     if [[ $VIRTUAL_ENV == "" ]]; then
         printf ""
     else
-        printf "\033[${bven};97m  $(basename $VIRTUAL_ENV) $(rarr $bpath $fven)"
+        printf "\033[${fven}m($(basename $VIRTUAL_ENV)) "
     fi
 }
 
 # Prints the current git branch if it exists, otherwise print noting
 gitbr() {
     if [[ $git_branch == "" ]]; then
-        printf "\033[m$(rarr '' $fpath)"
+        printf ""
     else
         # remove brackets from branch name
         gb=${git_branch#"("}
@@ -59,12 +59,12 @@ gitbr() {
         if [[ $git_dirty != "" ]]; then
             gd="\033[91m${git_dirty} " 
         fi
-        printf "$(rarr $bgit $fpath)\033[${bgit};97m  $gb $gd\033[m$(rarr $fgit '0')\033[m"
+        printf "\033[97m $gb $gd "
     fi
 }
-# usr="\033[97m\033[${busr}m \u \033[${fusr};${bpath}m\033[m"
-path="\033[${bpath};30m \w "
-export PS1="\$(venv)${path}\$(gitbr)\033[m \n$ " 
+usr="\033[${fusr}m\u\033[m : "
+path="\033[105;30m\w\033[m "
+export PS1="\$(venv)${usr}${path}\$(gitbr)\033[m \n$ " 
 
 # remove duplicates from PROMPT_COMMAND, since sourcing bash_profile adds some stuff again
 # without checking if it's already there, causing lag
