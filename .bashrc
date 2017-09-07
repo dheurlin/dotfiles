@@ -7,6 +7,7 @@ export PATH="$HOME/Library/Haskell/bin:$PATH" # add cabal packages
 export PATH="/Applications/MacVim.app/Contents/bin:$PATH" # Add mac vim
 export PATH="/Applications/VLC.app/Contents/MacOS:$PATH" # Add VLC
 export PATH="/Users/danielheurlin/.erlangInstaller/20.0/bin:$PATH" # Add erlang
+export PATH="/Users/danielheurlin/.userbin:$PATH" # Add erlang
 
 # Make bash use vim bindings
 set -o vi
@@ -113,6 +114,24 @@ alias rsc='osascript ~/Dropbox/coding\ stuff/applescript/resize-iterm.scpt'
 
 # A command to compile all .pmd files in all subdirectories into a master pdf
 alias pmd-to-master='~/Dropbox/coding\ stuff/bash/pmds-to-master-pdf.sh'
+
+# a shortcut to the spotify download program
+# alias spotdl='python3 ~/.userbin/src/spotify-downloader/spotdl.py'
+spotdl() {
+    # spotdl thinks it is in ~, so we must adjust the path to make it absolute 
+    matches=$(echo "$@" | grep -oh -e '\-f\s\S*' -e '\-\-folder\s\S*')
+    rc=$?; if [[ $rc == 0 ]]; then
+        file=$(echo ${matches[0]} | cut -d' ' -f2-)
+        file=$(greadlink -f $file) # convert to absolute path
+        file=$(echo $file | sed -e 's/[]\/$*.^|[]/\\&/g') # escape illegal chars
+        match=$(echo ${matches[0]} | sed -e 's/[\/&]/\\&/g')
+        args=$(echo "$@" | sed "s/$match/ \-f $file/g") # replace the illegal shit with the real shit
+    else
+        args="$@"
+    fi
+
+    python3 ~/.userbin/src/spotify-downloader/spotdl.py $args
+}
 
 # setup shortcut for sublime text
 #ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ~/.symlinks/subl
