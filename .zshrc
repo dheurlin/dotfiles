@@ -2,13 +2,27 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 source ~/dotfiles/path.sh
 
+
+########################################################################
+# Setup python Virtual Environment for python 3.6 ######################
+########################################################################
+export PYTHONPATH=${PYTHONPATH}:/usr/bin
+VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python3/bin/python3.6
+# Setup python Virtual Environment for python 3.6#####################################
+export WORKON_HOME=~"$HOME/.virtualenvs"
+source /usr/local/bin/virtualenvwrapper.sh
+# shortcut to make a virtual environment for python 3
+alias mkvirtualenv3='mkvirtualenv --python=/usr/local/opt/python3/bin/python3.6'
+# End of Python virtual envs ###########################################
+
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/danielheurlin/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="bira-venv"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -89,16 +103,4 @@ bindkey '^[[Z' reverse-menu-complete
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/dotfiles/aliases.sh
-
-########################################################################
-# Setup python Virtual Environment for python 3.6 ######################
-########################################################################
-export PYTHONPATH=${PYTHONPATH}:/usr/bin
-VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python3/bin/python3.6
-# Setup python Virtual Environment for python 3.6#####################################
-export WORKON_HOME=~"$HOME/.virtualenvs"
-source /usr/local/bin/virtualenvwrapper.sh
-# shortcut to make a virtual environment for python 3
-alias mkvirtualenv3='mkvirtualenv --python=/usr/local/opt/python3/bin/python3.6'
-# End of Python virtual envs ###########################################
 
