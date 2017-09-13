@@ -10,7 +10,7 @@ alias hfile='/Applications/shellscripts/hfile.sh'
 alias dl='curl -O'
 
 # A program that shows the next departures from a given tram stop (Västtrafik)
-alias td='~/Dropbox/coding\ stuff/TramDisplay/TramDisplay'
+alias td='python3.5 ~/Dropbox/coding\ stuff/TramDisplay/TramDisplay'
 
 # A command for resizing the current window to a percentage of the total screen, and cenering it
 # example: rsc 0.8 resizes the window to 80% of the screen size, and puts it in the center
