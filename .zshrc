@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+source ~/dotfiles/path.sh
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/danielheurlin/.oh-my-zsh
@@ -83,3 +84,17 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source ~/dotfiles/aliases.sh
+
+########################################################################
+# Setup python Virtual Environment for python 3.6 ######################
+########################################################################
+export PYTHONPATH=${PYTHONPATH}:/usr/bin
+VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python3/bin/python3.6
+# Setup python Virtual Environment for python 3.6#####################################
+export WORKON_HOME=~"$HOME/.virtualenvs"
+source /usr/local/bin/virtualenvwrapper.sh
+# shortcut to make a virtual environment for python 3
+alias mkvirtualenv3='mkvirtualenv --python=/usr/local/opt/python3/bin/python3.6'
+# End of Python virtual envs ###########################################
+
