@@ -27,8 +27,20 @@ venv_name() {
 }
 local venv_prompt='${fg[green]%}$(venv_name)%{$reset_color%}'
 
+vi_curr_mode() {
+    if [[ $(vi_mode_prompt_info) == "" ]]; then
+        echo -n "%B$%b% "
+    else
+        echo -n "%{$fg[white]$bg[red]%}%B$%b%{$reset_color%}"
+    fi
+}
+# RPROMPT='$(vi_curr_mode)'
+
 PROMPT="╭─${venv_prompt}${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
-╰─%B$%b "
+╰─\$(vi_curr_mode) " 
+
+# ╰─%B$%b "
+
 RPS1="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
@@ -39,3 +51,4 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX="%{$fg[green]%}‹"
 ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX="› %{$reset_color%}"
+
