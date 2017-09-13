@@ -43,8 +43,11 @@ PROMPT="╭─${venv_prompt}${user_host} ${current_dir} ${rvm_ruby} ${git_branch
 
 RPS1="${return_code}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
-ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}(%{$fg[magenta]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX=" %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}) %{$fg[red]%}✗"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[yellow]%})"
+
 
 # disable default venv prompt
 export VIRTUAL_ENV_DISABLE_PROMPT=1
