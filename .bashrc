@@ -8,6 +8,7 @@ export PATH="/Applications/MacVim.app/Contents/bin:$PATH" # Add mac vim
 export PATH="/Applications/VLC.app/Contents/MacOS:$PATH" # Add VLC
 export PATH="/Users/danielheurlin/.erlangInstaller/20.0/bin:$PATH" # Add erlang
 export PATH="/Users/danielheurlin/.userbin:$PATH" # Add erlang
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 # Make bash use vim bindings
 set -o vi
