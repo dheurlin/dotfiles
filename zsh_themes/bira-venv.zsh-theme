@@ -22,7 +22,7 @@ venv_name() {
     if [[ $VIRTUAL_ENV == "" ]]; then
         printf ""
     else
-        printf " ($(basename $VIRTUAL_ENV)) "
+        printf "($(basename $VIRTUAL_ENV)) "
     fi
 }
 local venv_prompt='${fg[green]%}$(venv_name)%{$reset_color%}'
