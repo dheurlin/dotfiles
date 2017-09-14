@@ -27,6 +27,7 @@ venv_name() {
 }
 local venv_prompt='${fg[green]%}$(venv_name)%{$reset_color%}'
 
+# White $, with red bg if normal mode, and no bg otherwise
 vi_curr_mode() {
     if [[ $(vi_mode_prompt_info) == "" ]]; then
         echo -n "%B$%b% "
@@ -36,11 +37,8 @@ vi_curr_mode() {
 }
 # RPROMPT='$(vi_curr_mode)'
 
-PROMPT="╭─${venv_prompt}${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
-╰─\$(vi_curr_mode) " 
-
-# ╰─%B$%b "
-
+PROMPT="╭ ${venv_prompt}${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
+╰ \$(vi_curr_mode) " 
 RPS1="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}(%{$fg[magenta]%}"
