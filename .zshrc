@@ -66,7 +66,7 @@ ZSH_CUSTOM=~/dotfiles/zsh_custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx brew compleat django pip python vi-mode) 
+plugins=(git osx brew compleat django pip python vi-mode zsh-autosuggestions) 
 
 source $ZSH/oh-my-zsh.sh
 
