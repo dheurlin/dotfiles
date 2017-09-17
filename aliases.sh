@@ -19,6 +19,9 @@ alias rsc='osascript ~/Dropbox/coding\ stuff/applescript/resize-iterm.scpt'
 # A command to compile all .pmd files in all subdirectories into a master pdf
 alias pmd-to-master='~/Dropbox/coding\ stuff/bash/pmds-to-master-pdf.sh'
 
+# A shortcut to edit .zshrc
+alias zrc="vim ~/dotfiles/.zshrc"
+
 # a shortcut to the spotify download program
 # alias spotdl='python3 ~/.userbin/src/spotify-downloader/spotdl.py'
 spotdl() {
