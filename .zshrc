@@ -60,7 +60,7 @@ ZSH_THEME="bira-venv"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=~/dotfiles/zsh_custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -93,6 +93,10 @@ source $ZSH/oh-my-zsh.sh
 #
 # Make binding to go backwards in tab complete using shift-tab
 bindkey '^[[Z' reverse-menu-complete
+
+# Add syntax highlighting to LESS
+export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+export LESS=" -R -N"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

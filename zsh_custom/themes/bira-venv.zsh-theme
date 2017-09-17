@@ -18,14 +18,16 @@ else
 fi
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
+venv_prefix="%{$fg[green]%}(%{$fg[yellow]%}"
+venv_suffix="%{$fg[green]%})%{$reset_color%} "
 venv_name() {
     if [[ $VIRTUAL_ENV == "" ]]; then
-        printf ""
+        echo -n ""
     else
-        printf "($(basename $VIRTUAL_ENV)) "
+        echo -n "$venv_prefix$(basename $VIRTUAL_ENV)$venv_suffix"
     fi
 }
-local venv_prompt='${fg[green]%}$(venv_name)%{$reset_color%}'
+local venv_prompt="\$(venv_name)"
 
 # White $, with red bg if normal mode, and no bg otherwise
 vi_curr_mode() {
