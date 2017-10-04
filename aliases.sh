@@ -22,6 +22,9 @@ alias pmd-to-master='~/Dropbox/coding\ stuff/bash/pmds-to-master-pdf.sh'
 # A shortcut to edit .zshrc
 alias zrc="vim ~/dotfiles/.zshrc"
 
+# Display an amusing message
+alias lolcow="fortune | cowsay | lolcat"
+
 # a shortcut to the spotify download program
 # alias spotdl='python3 ~/.userbin/src/spotify-downloader/spotdl.py'
 spotdl() {

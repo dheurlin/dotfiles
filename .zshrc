@@ -98,6 +98,9 @@ bindkey '^[[Z' reverse-menu-complete
 export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R -N"
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=239"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg_start_code(8;5;239)"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
