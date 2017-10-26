@@ -19,6 +19,9 @@ alias rsc='osascript ~/Dropbox/coding\ stuff/applescript/resize-iterm.scpt'
 # A command to compile all .pmd files in all subdirectories into a master pdf
 alias pmd-to-master='~/Dropbox/coding\ stuff/bash/pmds-to-master-pdf.sh'
 
+# A command to synchronize a youtube playlist
+alias yt-sync='~/Dropbox/coding\ stuff/bash/sync-youtube-playlist.sh'
+
 # A shortcut to edit .zshrc
 alias zrc="vim ~/dotfiles/.zshrc"
 
