@@ -12,3 +12,4 @@ export PATH="/Users/danielheurlin/.userbin:$PATH" # Add erlang
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 # export PATH="/Applications/Deluge.app/Contents/MacOS:$PATH" # Add Deluge
 export PATH="/Applications/MATLAB_R2016b.app/bin:$PATH" # Add matlab binaies
+export PATH="/Applications/NetLogo 6.0.2/NetLogo 6.0.2.app/Contents/MacOS:$PATH" # Add matlab binaies
