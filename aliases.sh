@@ -22,6 +22,9 @@ alias pmd-to-master='~/Dropbox/coding\ stuff/bash/pmds-to-master-pdf.sh'
 # A command to synchronize a youtube playlist
 yt-sync() { ~/Dropbox/coding\ stuff/bash/sync-youtube-playlist.sh "$@" }
 
+# Vim should be the macvim executable
+alias vim="/usr/local/Cellar/macvim/8.0-144_3/MacVim.app/Contents/bin/vim"
+
 # A shortcut to edit .zshrc
 alias zrc="vim ~/dotfiles/.zshrc"
 
@@ -31,7 +34,7 @@ alias lolcow="fortune | cowsay | lolcat"
 # a shortcut to the spotify download program
 # alias spotdl='python3 ~/.userbin/src/spotify-downloader/spotdl.py'
 spotdl() {
-    # spotdl thinks it is in ~, so we must adjust the path to make it absolute 
+    # spotdl thinks it is in ~, so we must adjust the path to make it absolute
     matches=$(echo "$@" | grep -oh -e '\-f\s\S*' -e '\-\-folder\s\S*')
     rc=$?; if [[ $rc == 0 ]]; then
         file=$(echo ${matches[0]} | cut -d' ' -f2-)
