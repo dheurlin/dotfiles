@@ -257,6 +257,24 @@ shell:
 #     strings. For example:
 #     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
 key_bindings:
+#
+############ Fix missing "alt" key ######################################
+#
+  - { key: Key0, mods: Alt, chars: "≈" }
+  - { key: Key1, mods: Alt, chars: "©" }
+  - { key: Key2, mods: Alt, chars: "@" }
+  - { key: Key3, mods: Alt, chars: "£" }
+  - { key: Key4, mods: Alt, chars: "$" }
+  - { key: Key5, mods: Alt, chars: "∞" }
+  - { key: Key6, mods: Alt, chars: "§" }
+  - { key: Key7, mods: Alt, chars: "|" }
+  - { key: Key8, mods: Alt, chars: "[" }
+  - { key: Key9, mods: Alt, chars: "]" }
+  - { key: Key8, mods: Alt|Shift, chars: "{" }
+  - { key: Key9, mods: Alt|Shift, chars: "}" }
+  - { key: Key0, mods: Alt|Shift, chars: "~" }
+######### Default bindings ################################################
+#
   - { key: V,        mods: Command, action: Paste                        }
   - { key: C,        mods: Command, action: Copy                         }
   - { key: Q,        mods: Command, action: Quit                         }
