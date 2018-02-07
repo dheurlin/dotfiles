@@ -41,7 +41,8 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-      family: "FuraCode Nerd Font"
+      family: "FuraCode Missing"
+      style: Demi
 
   # The bold font face
   bold:
@@ -154,7 +155,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.95
+background_opacity: 0.90
 
 # Mouse bindings
 #
@@ -260,7 +261,6 @@ key_bindings:
 #
 ############ Fix missing "alt" key ######################################
 #
-  - { key: Key0, mods: Alt, chars: "≈" }
   - { key: Key1, mods: Alt, chars: "©" }
   - { key: Key2, mods: Alt, chars: "@" }
   - { key: Key3, mods: Alt, chars: "£" }
@@ -272,7 +272,9 @@ key_bindings:
   - { key: Key9, mods: Alt, chars: "]" }
   - { key: Key8, mods: Alt|Shift, chars: "{" }
   - { key: Key9, mods: Alt|Shift, chars: "}" }
+############ Fix missing tilde/caret key ######################################
   - { key: Key0, mods: Alt|Shift, chars: "~" }
+  - { key: Key0, mods: Alt, chars: "^" }
 ######### Default bindings ################################################
 #
   - { key: V,        mods: Command,       action: Paste                        }

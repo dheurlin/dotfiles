@@ -39,8 +39,8 @@ vi_curr_mode() {
 }
 # RPROMPT='$(vi_curr_mode)'
 
-PROMPT="╭ ${venv_prompt}${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
-╰ \$(vi_curr_mode) "
+PROMPT="╭  ${venv_prompt}${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
+╰  \$(vi_curr_mode) "
 RPS1="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}(%{$fg[magenta]%}"
