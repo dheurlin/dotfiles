@@ -268,10 +268,13 @@ key_bindings:
   - { key: Key5, mods: Alt, chars: "∞" }
   - { key: Key6, mods: Alt, chars: "§" }
   - { key: Key7, mods: Alt, chars: "|" }
+  - { key: Key7, mods: Alt|Shift, chars: "\\" }
   - { key: Key8, mods: Alt, chars: "[" }
   - { key: Key9, mods: Alt, chars: "]" }
   - { key: Key8, mods: Alt|Shift, chars: "{" }
   - { key: Key9, mods: Alt|Shift, chars: "}" }
+  - { key: Minus, mods: Alt, chars: "´" }
+  - { key: Minus, mods: Alt|Shift, chars: "`" }
 ############ Fix missing tilde/caret key ######################################
   - { key: Key0, mods: Alt|Shift, chars: "~" }
   - { key: Key0, mods: Alt, chars: "^" }
