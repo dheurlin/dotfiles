@@ -10,14 +10,14 @@ export PYTHONPATH=${PYTHONPATH}:/usr/bin
 VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python3/bin/python3.6
 # Setup python Virtual Environment for python 3.6#####################################
 export WORKON_HOME=~"$HOME/.virtualenvs"
-source /usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh
 # shortcut to make a virtual environment for python 3
-alias mkvirtualenv3='mkvirtualenv --python=/usr/local/opt/python3/bin/python3.6'
+# alias mkvirtualenv3='mkvirtualenv --python=/usr/local/opt/python3/bin/python3.6'
 # End of Python virtual envs ###########################################
 
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/danielheurlin/.oh-my-zsh
+export ZSH=/home/danielheurlin/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -111,3 +111,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=239"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/dotfiles/aliases.sh
 
+
+# disable ctrl s hang
+stty -ixon
