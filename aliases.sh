@@ -1,3 +1,6 @@
+###### Shortcuts #######
+alias gh="cd ~"
+
 # QuickLook file from terminal
 ql(){
     qlmanage -p "$1" &> /dev/null
