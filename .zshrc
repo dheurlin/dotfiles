@@ -1,11 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-source ~/dotfiles/path.sh
+source ~/path.sh
 
 
 ########################################################################
 # Setup python Virtual Environment for python 3.6 ######################
 ########################################################################
+# export PYTHONPATH="${PYTHONPATH}:/usr/lib/python2.7/site-packages"
 export PYTHONPATH=${PYTHONPATH}:/usr/bin
 VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python3/bin/python3.6
 # Setup python Virtual Environment for python 3.6#####################################
@@ -111,6 +112,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=239"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/dotfiles/aliases.sh
 
+# Use pywal theme
+# (cat ~/.cache/wal/sequences &) ## Uses all colors
+(cat ~/.cache/wal/term-fg-bg &)  ## Uses only foreground and background
 
 # disable ctrl s hang
 stty -ixon
